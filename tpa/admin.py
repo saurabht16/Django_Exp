@@ -34,7 +34,6 @@ class ChoiceInline(NestedTabularInline):
 
     inlines = [LevelTwoInline]
 
-
     class Media:
         css = {"all": ("css/hide_admin_original.css",)}
 
