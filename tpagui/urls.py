@@ -15,8 +15,31 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from tpa.views import newChoiceAutocomplete
+from tpa.views import home, about, contact
+from django.conf import settings
+from tastypie.api import Api
+from tpa.api.resources import QuestionResource
+
+ques_resource = QuestionResource()
 
 urlpatterns = [
+    url(r'^admin_tools/', include('admin_tools.urls')),
     url(r'^tpa/', include('tpa.urls')),
     url(r'^admin/', admin.site.urls),
+    url(r'^$', home),
+    url(r'^about/$', about),
+    url(r'^contact/$', contact),
+    url(r'^newchoice-autocomplete/$',
+        newChoiceAutocomplete.as_view(),
+        name='newchoice-autocomplete',
+    ),
+    url(r'^api/', include(ques_resource.urls)),
 ]
+
+
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns = [
+        url(r'^__debug__/', include(debug_toolbar.urls)),
+    ] + urlpatterns
