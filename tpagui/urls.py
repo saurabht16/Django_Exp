@@ -26,6 +26,7 @@ ques_resource = QuestionResource()
 urlpatterns = [
     url(r'^admin_tools/', include('admin_tools.urls')),
     url(r'^tpa/', include('tpa.urls')),
+    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^$', home),
     url(r'^about/$', about),
