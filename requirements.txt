@@ -1,0 +1,11 @@
+cx-Oracle==5.3
+Django==1.11
+django-autocomplete-light==3.2.9
+django-csvimport==2.11
+django-debug-toolbar==1.8
+django-floppyforms==1.7.0
+django-import-export==0.5.1
+tastypie==0.14.0
+gunicorn==19.7.1
+whitenoise==4.0b4
+django-reversion==2.0.12
