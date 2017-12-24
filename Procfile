@@ -1,1 +1,1 @@
-web: gunicorn myapp.wsgi --workers 2
+web: gunicorn tpagui.wsgi --workers 2

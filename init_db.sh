@@ -6,4 +6,4 @@ echo "------ create default admin user ------"
 echo "from django.contrib.auth.models import User; User.objects.create_superuser('admin', 'admin@myapp.local', 'Passw0rd')" | python manage.py shell
 
 echo "------ starting gunicorn &nbsp;------"
-gunicorn myapp.wsgi --workers 2
+gunicorn tpagui.wsgi --workers 2
