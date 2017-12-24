@@ -1,0 +1,6 @@
+applications:
+- name: Tpagui
+  instances: 1
+  memory: 128M
+  command: bash init_db.sh
+  random-route: true
